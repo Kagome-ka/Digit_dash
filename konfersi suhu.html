@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
+    <title>Konversi Suhu</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #b3c8dc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            float: inline-end;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body onload="brython()">
+    <h1>PROGRAM KONVERSI TEMPERATURE</h1>
+
+    <input type="number" id="celcius" placeholder="Masukkan suhu dalam Celcius">
+    <button id="konversi_button">Konversi</button>
+
+    <div id="output"></div>
+    <button id="ulang_button" style="display:none;">Hitung Ulang</button>
+
+    <script type="text/python">
+        from browser import document
+
+        def konversi(event):
+            try:
+                celcius = float(document["celcius"].value)
+                output = f"""
+                Suhu adalah {celcius:.2f} Celcius<br>
+                Suhu dalam Reamur adalah {(4/5) * celcius:.2f} Reamur<br>
+                Suhu dalam Fahrenheit adalah {((9/5) * celcius) + 32:.2f} Fahrenheit<br>
+                Suhu dalam Kelvin adalah {celcius + 273:.2f} Kelvin<br>
+                """
+                document["output"].html = output
+                document["ulang_button"].style.display = "inline"
+            except ValueError:
+                document["output"].html = "Masukkan suhu yang valid."
+
+        document["konversi_button"].bind("click", konversi)
+
+        def ulang(event):
+            document["celcius"].value = ""
+            document["output"].html = ""
+            document["ulang_button"].style.display = "none"
+
+        document["ulang_button"].bind("click", ulang)
+    </script>
+    <a href="index.html" class="btn">Kembali</a>
+</body>
+
+</html>
