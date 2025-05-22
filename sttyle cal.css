@@ -6,7 +6,7 @@ body {
     justify-content: top;
     align-items: center;
     height: 100vh;
-    background-image: url('potrait.jpg');
+    background-image: url('background3.jfif');
     /* Set your background image here */
     background-size: cover;
     /* Cover the entire viewport */
@@ -19,6 +19,7 @@ body {
 .description {
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
+    color: black;
     /* Description font size */
     color: white;
     /* Description color */
