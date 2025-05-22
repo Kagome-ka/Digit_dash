@@ -14,8 +14,8 @@
         }
 
         header {
-            background-color: rgb(52, 55, 59);
-            color: rgb(119, 207, 12);
+            background-color: #f35d6d;
+            color: white;
             padding: 10px 0;
             text-align: center;
         }
@@ -29,39 +29,52 @@
         }
 
         h1 {
-            color: #abfcb2;
+            color: white;
         }
 
         p {
             color: #212529;
+            text-align: center;
         }
 
         .btn {
+            margin: 5px auto;
             padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #df7fb3;
             color: white;
-            border: none;
-            border-radius: 5px;
+            border: solid 3px #aa5adf;
+            border-radius: 30px;
             cursor: pointer;
             text-decoration: none;
+            display: block;
+            width: 200px;
+            text-align: center;
+            transition: all 0, 5 ease-in-out;
         }
 
         .btn:hover {
-            background-color: #218838;
+            background-color: #cb30ac;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+            /* sedikit mengecil saat diklik */
+            background-color: #882184;
+            /* warna jadi sedikit lebih gelap */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset;
+            /* efek tekan ke dalam */
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Halaman Informasi</h1>
+        <h1>Digit-Dash</h1>
     </header>
     <main>
         <p>Selamat datang di halaman informasi kami.
-            Kami menyediakan berbagai informasi yang berguna untuk Anda.
-        </p>
-        <p>pilihan menu : </p>
-        <a href="konfersi suhu.html" class="btn">Konfersi suhu</a>
+            Kami menyediakan berbagai informasi yang berguna untuk Anda. <br>pilihan menu : </p>
+        <a href="konfersi suhu.html" class="btn">Konfersi suhu</a> <br>
         <a href="cal.html" class="btn">Kalkulator</a>
     </main>
 </body>
